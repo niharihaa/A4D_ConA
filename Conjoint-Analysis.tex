@@ -1,0 +1,343 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Conjoint-Analysis.R},
+  pdfauthor={Nihariha Kamal},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Conjoint-Analysis.R}
+\author{Nihariha Kamal}
+\date{2024-07-09}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load necessary packages}
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{"support.CEs"}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"support.CEs"}\NormalTok{, }\AttributeTok{dependencies=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: support.CEs
+\end{verbatim}
+
+\begin{verbatim}
+## Registered S3 method overwritten by 'DoE.base':
+##   method           from       
+##   factorize.factor conf.design
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{, }\AttributeTok{dependencies=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: ggplot2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{"readr"}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"readr"}\NormalTok{, }\AttributeTok{dependencies=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: readr
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{, }\AttributeTok{dependencies=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: dplyr
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(support.CEs)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(readr)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\CommentTok{\# Load the data}
+\NormalTok{file\_path }\OtherTok{\textless{}{-}} \StringTok{"C:/Users/nihar/OneDrive/Desktop/Bootcamp/SCMA 632/DataSet/pizza\_data.csv"}
+\NormalTok{pizza\_data }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(file\_path)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 16 Columns: 9
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (8): brand, price, weight, crust, cheese, size, toppings, spicy
+## dbl (1): ranking
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Convert columns to factors}
+\NormalTok{pizza\_data }\OtherTok{\textless{}{-}}\NormalTok{ pizza\_data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\FunctionTok{across}\NormalTok{(}\FunctionTok{c}\NormalTok{(brand, price, weight, crust, cheese, size, toppings, spicy), as.factor))}
+
+\CommentTok{\# Create profiles}
+\NormalTok{profiles }\OtherTok{\textless{}{-}}\NormalTok{ pizza\_data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{ranking)}
+
+\CommentTok{\# Create preferences dataset}
+\NormalTok{preferences }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
+  \AttributeTok{Respondent =} \FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(pizza\_data), }\AttributeTok{each =} \FunctionTok{nrow}\NormalTok{(profiles)),}
+  \AttributeTok{Profile =} \FunctionTok{rep}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(profiles), }\AttributeTok{times =} \FunctionTok{nrow}\NormalTok{(pizza\_data)),}
+  \AttributeTok{Rating =} \FunctionTok{rep}\NormalTok{(pizza\_data}\SpecialCharTok{$}\NormalTok{ranking, }\AttributeTok{each =} \FunctionTok{nrow}\NormalTok{(profiles))}
+\NormalTok{)}
+
+\CommentTok{\# Merge profiles with preferences}
+\NormalTok{conjoint\_data }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{(preferences, profiles, }\AttributeTok{by.x =} \StringTok{"Profile"}\NormalTok{, }\AttributeTok{by.y =} \StringTok{"row.names"}\NormalTok{)}
+
+\CommentTok{\# Perform conjoint analysis using lm}
+\NormalTok{conjoint\_model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(Rating }\SpecialCharTok{\textasciitilde{}}\NormalTok{ brand }\SpecialCharTok{+}\NormalTok{ price }\SpecialCharTok{+}\NormalTok{ weight }\SpecialCharTok{+}\NormalTok{ crust }\SpecialCharTok{+}\NormalTok{ cheese }\SpecialCharTok{+}\NormalTok{ size }\SpecialCharTok{+}\NormalTok{ toppings }\SpecialCharTok{+}\NormalTok{ spicy, }\AttributeTok{data =}\NormalTok{ conjoint\_data)}
+
+\CommentTok{\# Summary of results}
+\FunctionTok{summary}\NormalTok{(conjoint\_model)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = Rating ~ brand + price + weight + crust + cheese + 
+##     size + toppings + spicy, data = conjoint_data)
+## 
+## Residuals:
+##    Min     1Q Median     3Q    Max 
+##  -7.50  -3.75   0.00   3.75   7.50 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)       8.500e+00  1.150e+00   7.391 2.39e-12 ***
+## brandOnesta       1.784e-15  8.399e-01   0.000        1    
+## brandOven Story   2.878e-15  8.399e-01   0.000        1    
+## brandPizza hut    4.396e-15  8.399e-01   0.000        1    
+## price$2.00       -1.945e-15  8.399e-01   0.000        1    
+## price$3.00       -2.582e-15  8.399e-01   0.000        1    
+## price$4.00       -2.581e-15  8.399e-01   0.000        1    
+## weight200g       -8.041e-16  8.399e-01   0.000        1    
+## weight300g       -2.537e-16  8.399e-01   0.000        1    
+## weight400g       -2.355e-16  8.399e-01   0.000        1    
+## crustthin         7.772e-16  5.939e-01   0.000        1    
+## cheeseMozzarella  4.996e-16  5.939e-01   0.000        1    
+## sizeregular       7.772e-16  5.939e-01   0.000        1    
+## toppingspaneer    5.551e-16  5.939e-01   0.000        1    
+## spicynormal       5.551e-16  5.939e-01   0.000        1    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 4.751 on 241 degrees of freedom
+## Multiple R-squared:  4.559e-31,  Adjusted R-squared:  -0.05809 
+## F-statistic: 7.848e-30 on 14 and 241 DF,  p-value: 1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Extract part{-}worth utilities}
+\NormalTok{part\_worths }\OtherTok{\textless{}{-}} \FunctionTok{coef}\NormalTok{(conjoint\_model)}
+\NormalTok{part\_worths\_df }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(part\_worths)}
+\NormalTok{part\_worths\_df}\SpecialCharTok{$}\NormalTok{Attribute }\OtherTok{\textless{}{-}} \FunctionTok{rownames}\NormalTok{(part\_worths\_df)}
+
+\CommentTok{\# Plot part{-}worth utilities}
+\FunctionTok{ggplot}\NormalTok{(part\_worths\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Attribute, }\AttributeTok{y =}\NormalTok{ part\_worths)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Part{-}Worth Utilities"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Attribute"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Part{-}Worth Utility"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Conjoint-Analysis_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Compute importance}
+\NormalTok{importance }\OtherTok{\textless{}{-}} \FunctionTok{abs}\NormalTok{(part\_worths[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{]) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(}\FunctionTok{abs}\NormalTok{(part\_worths[}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{])) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{importance\_df }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{Attribute =} \FunctionTok{names}\NormalTok{(importance), }\AttributeTok{Importance =}\NormalTok{ importance)}
+
+\CommentTok{\# Plot attribute importance}
+\FunctionTok{ggplot}\NormalTok{(importance\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{reorder}\NormalTok{(Attribute, Importance), }\AttributeTok{y =}\NormalTok{ Importance)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Attribute Importance"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Attribute"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Importance"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Conjoint-Analysis_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{if}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{require}\NormalTok{(}\StringTok{"gridExtra"}\NormalTok{)) }\FunctionTok{install.packages}\NormalTok{(}\StringTok{"gridExtra"}\NormalTok{, }\AttributeTok{dependencies=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: gridExtra
+## 
+## Attaching package: 'gridExtra'
+## 
+## The following object is masked from 'package:dplyr':
+## 
+##     combine
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(gridExtra)}
+
+\CommentTok{\# Create boxplots for each attribute}
+\NormalTok{attributes }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"brand"}\NormalTok{, }\StringTok{"price"}\NormalTok{, }\StringTok{"weight"}\NormalTok{, }\StringTok{"crust"}\NormalTok{, }\StringTok{"cheese"}\NormalTok{, }\StringTok{"size"}\NormalTok{, }\StringTok{"toppings"}\NormalTok{, }\StringTok{"spicy"}\NormalTok{)}
+
+\CommentTok{\# Function to create a boxplot for an attribute}
+\NormalTok{create\_boxplot }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(attribute) \{}
+  \FunctionTok{ggplot}\NormalTok{(pizza\_data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \SpecialCharTok{!!}\FunctionTok{sym}\NormalTok{(attribute), }\AttributeTok{y =}\NormalTok{ ranking)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \FunctionTok{paste}\NormalTok{(}\StringTok{"Distribution of Rankings by"}\NormalTok{, attribute), }\AttributeTok{x =}\NormalTok{ attribute, }\AttributeTok{y =} \StringTok{"Ranking"}\NormalTok{)}
+\NormalTok{\}}
+
+\CommentTok{\# Generate boxplots for all attributes}
+\NormalTok{plots }\OtherTok{\textless{}{-}} \FunctionTok{lapply}\NormalTok{(attributes, create\_boxplot)}
+
+\CommentTok{\# Display the plots}
+\FunctionTok{do.call}\NormalTok{(grid.arrange, }\FunctionTok{c}\NormalTok{(plots, }\AttributeTok{ncol =} \DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Conjoint-Analysis_files/figure-latex/unnamed-chunk-1-3.pdf}
+
+\end{document}
